@@ -50,7 +50,7 @@ savePath = "c:/Data/python/parser/downloads/" + datt + "_pdf-abholbereite-visa-n
 open(savePath, 'wb').write(myfile.content)
 
 # Put your number at Deutsch diplo.de website here
-myNumer = str(0123456) # This is example number! Put you own number here!
+myNumer = str(1234567) # This is example number! Put you own number here!
 
 # Using pdfMiner.six for extracting PDF to text
 
