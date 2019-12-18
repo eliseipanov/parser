@@ -41,7 +41,7 @@ savePath = "c:/Data/python/parser/downloads/" + datt + "_pdf-abholbereite-visa-n
 open(savePath, 'wb').write(myfile.content)
 
 # Put your number at Deutsch diplo.de website here
-myNumer = str(1914132)
+myNumer = str(1914132) # This is example number! Put you own number here!
 
 # Using pdfMiner.six for extracting PDF to text
 
@@ -68,12 +68,13 @@ def extract_text_from_pdf(pdf_path):
 
 if __name__ == '__main__':
     PDFtextblob = extract_text_from_pdf(savePath)
-#print(PDFtextblob.find(str(19128164544)))
+
 # if number exists, find it and get result
-if PDFtextblob.find(str(1914132)) != -1:
-    print('Номер 1914132 знайдено в файлі!')
+if PDFtextblob.find(myNumer) != -1:
+    print('Номер ' + myNumer + ' знайдено в файлі!')
+    print('Відправляємо повідомлення на вказану e-mail адресу!')
 # If not - stuck with error and remove temporary file
 else:
-    print('Номер 1914132 не знайдено в файлі!')
+    print('Номер ' + myNumer + ' не знайдено в файлі! Видаляємо')
     os.remove(savePath)
-    print("File Succesfully Removed!")
+    print("Файл PDF видалено!")
