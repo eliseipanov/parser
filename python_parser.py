@@ -1,3 +1,11 @@
+# ---------------------------------------------------------------------------------------------------------------------------
+# This is python authomatization script for grabbing information about your documents ID case from the website kiew.diplo.de
+# You can use Libriry called shedule to make reports every day  bitween 8:00-9:00 (Kyiv -1 timezone)
+# on your own webserver 
+# or make check manualy
+# You can use the copy of this script as you wish and share it with somebody. Im' not care, no big deal
+# 18 december 2019 by Elisei Paniv, Kyiv, Ukraine
+# ---------------------------------------------------------------------------------------------------------------------------
 import requests
 import io
 import os
@@ -7,6 +15,7 @@ from pdfminer.converter import TextConverter
 from pdfminer.pdfinterp import PDFPageInterpreter
 from pdfminer.pdfinterp import PDFResourceManager
 from pdfminer.pdfpage import PDFPage
+from telebot import telegram_bot_sendtext
 
 # define the URL to crawl & parse
 
@@ -41,7 +50,7 @@ savePath = "c:/Data/python/parser/downloads/" + datt + "_pdf-abholbereite-visa-n
 open(savePath, 'wb').write(myfile.content)
 
 # Put your number at Deutsch diplo.de website here
-myNumer = str(1914132) # This is example number! Put you own number here!
+myNumer = str(0123456) # This is example number! Put you own number here!
 
 # Using pdfMiner.six for extracting PDF to text
 
@@ -73,8 +82,10 @@ if __name__ == '__main__':
 if PDFtextblob.find(myNumer) != -1:
     print('Номер ' + myNumer + ' знайдено в файлі!')
     print('Відправляємо повідомлення на вказану e-mail адресу!')
+    telegram_bot_sendtext("Ваш ID " + myNumer +" знайдено за посиланням" + getPdf + "!")
 # If not - stuck with error and remove temporary file
 else:
     print('Номер ' + myNumer + ' не знайдено в файлі! Видаляємо')
     os.remove(savePath)
     print("Файл PDF видалено!")
+    telegram_bot_sendtext("Ваш ID " + myNumer +" не знайдено за посиланням" + getPdf + "!")
