@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------------------------------------------------------
 # This is python authomatization script for grabbing information about your documents ID case from the website kiew.diplo.de
 # You can use Libriry called shedule to make reports every day  bitween 8:00-9:00 (Kyiv -1 timezone)
-# on your own webserver 
+# on your own webserver
 # or make check manualy
 # You can use the copy of this script as you wish and share it with somebody. Im' not care, no big deal
 # 18 december 2019 by Elisei Paniv, Kyiv, Ukraine
@@ -9,6 +9,8 @@
 import requests
 import io
 import os
+import schedule
+import time
 from bs4 import BeautifulSoup as bs
 from datetime import datetime
 from pdfminer.converter import TextConverter
@@ -30,6 +32,7 @@ soap = bs(page.content, 'html.parser')
 
 # Base website URL
 baseUrl = "https://kiew.diplo.de"
+
 #find anchor for grepping right URL of the PDF
 
 link = soap.find("a", class_="rte__anchor i-pdf")
