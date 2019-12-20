@@ -36,10 +36,10 @@ Then change variables inside both of the scripts:
 
 ---------python_parser.py------------------------
 
-##downloadPath  - and make sure path exists
-##myNumer  - your case number you given by Deutsch embassy officer
+##downloadPath##  - and make sure path exists
+##myNumer##  - your case number you given by Deutsch embassy officer
 
 ---------telebot.py------------------------------
 
-##bot_token  - your token you have from FatherBot
-##bot_chatID - your own chat_id from response in URL  https://api.telegram.org/botYOUR_TOKEN_HERE/getUpdates
+##bot_token##  - your token you have from FatherBot
+##bot_chatID## - your own chat_id from response in URL  https://api.telegram.org/botYOUR_TOKEN_HERE/getUpdates
