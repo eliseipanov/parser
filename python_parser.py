@@ -27,7 +27,7 @@ app_url = 'https://kiew.diplo.de/ua-uk/service/05-VisaEinreise/teaser-abholberei
 # Base website URL
 baseUrl = "https://kiew.diplo.de"
 # Put your number at Deutsch diplo.de website here
-myNumer = str(1234567) # This is example number! Put you own number here!
+myNumer = str(1914132) # This is example number! Put you own number here!
 
 #----------------------------------------------------------------------------------------------
 def extract_text_from_pdf(pdf_path):
