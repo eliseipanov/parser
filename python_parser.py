@@ -1,3 +1,11 @@
+# ---------------------------------------------------------------------------------------------------------------------------
+# This is python authomatization script for grabbing information about your documents ID case from the website kiew.diplo.de
+# You can use Libriry called shedule to make reports every day  bitween 8:00-9:00 (Kyiv -1 timezone)
+# on your own webserver
+# or make check manualy
+# You can use the copy of this script as you wish and share it with somebody. Im' not care, no big deal
+# 18 december 2019 by Elisei Paniv, Kyiv, Ukraine
+# ---------------------------------------------------------------------------------------------------------------------------
 import requests
 import io
 import os
@@ -19,7 +27,7 @@ app_url = 'https://kiew.diplo.de/ua-uk/service/05-VisaEinreise/teaser-abholberei
 # Base website URL
 baseUrl = "https://kiew.diplo.de"
 # Put your number at Deutsch diplo.de website here
-myNumer = str(1914132) # This is example number! Put you own number here!
+myNumer = str(1234567) # This is example number! Put you own number here!
 
 #----------------------------------------------------------------------------------------------
 def extract_text_from_pdf(pdf_path):
