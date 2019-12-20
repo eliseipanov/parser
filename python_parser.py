@@ -12,10 +12,12 @@ from pdfminer.pdfpage import PDFPage
 from telebot import telegram_bot_sendtext
 #----------------------------------------------------------------------------------------------
 #define Variables and functions
+downloadPath = "c:/Data/python/parser/downloads/"
+
+# Url of the page where pdflink posted
 app_url = 'https://kiew.diplo.de/ua-uk/service/05-VisaEinreise/teaser-abholbereite-visa/1241142'
 # Base website URL
 baseUrl = "https://kiew.diplo.de"
-#find anchor for grepping right URL of the PDF
 # Put your number at Deutsch diplo.de website here
 myNumer = str(1914132) # This is example number! Put you own number here!
 
@@ -51,7 +53,7 @@ def check_my_id():
     myfile = requests.get(getPdf)
     a = datetime.now()
     datt = str(int(a.timestamp()))
-    savePath = "c:/Data/python/parser/downloads/" + datt + "_pdf-abholbereite-visa-neu-data.pdf"
+    savePath = downloadPath + datt + "_pdf-abholbereite-visa-neu-data.pdf"
     # Writing the content of PDF to file in subdirectory /downloads
     open(savePath, 'wb').write(myfile.content)
     # Using pdfMiner.six for extracting PDF to text
@@ -59,20 +61,19 @@ def check_my_id():
         PDFtextblob = extract_text_from_pdf(savePath)
     # if number exists, find it and get result
     if PDFtextblob.find(myNumer) != -1:
-        print('Номер ' + myNumer + ' знайдено в файлі!')
-        print('Відправляємо повідомлення на вказану e-mail адресу!')
+        print('Номер ' + myNumer + ' знайдено в файлі! Відправляємо повідомлення')
         telegram_bot_sendtext("Вітаємо! Ваш ID " + myNumer +" знайдено за посиланням" + getPdf + "!")
         # If not - stuck with error and remove temporary file
     else:
-        print('Номер ' + myNumer + ' не знайдено в файлі! Видаляємо')
+        print('Номер ' + myNumer + ' не знайдено в файлі! Видаляємо i відправляємо повідомлення')
         telegram_bot_sendtext("Нажаль, Ваш ID " + myNumer +", поки що, не знайдено за посиланням" + getPdf + "!")
         os.remove(savePath)
         print("Файл PDF видалено!")
 
-#check_my_id()
+check_my_id()
 # Lounching check on Schedule
-schedule.every().day.at("09:00").do(check_my_id)
+#schedule.every().day.at("12:05").do(check_my_id)
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+#while True:
+ #   schedule.run_pending()
+  #  time.sleep(1)
