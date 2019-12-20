@@ -43,6 +43,3 @@ Then change variables inside both of the scripts:
 
 *bot_token*  - your token you have from FatherBot
 *bot_chatID* - your own chat_id from response in URL  https://api.telegram.org/botYOUR_TOKEN_HERE/getUpdates
-
-
-
