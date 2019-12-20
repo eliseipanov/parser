@@ -13,7 +13,8 @@ and telegram Bot chat ID and token. I put Example thats will not work for you!
 _____________________________________________________________________
 Still working with.
 20.12.2019
-Added file requirements.txt. You can use this file to install all libraries used in script
+
+### You can use requirements.txt to install all libraries you need to use this script
 
 Remember: we are working with python version >= 3.*
 
@@ -24,22 +25,22 @@ or if you use virtualenv with different versions of python:
 
 # python3 -m venv /path/to/new/virtual/environment
 
-Activate your new environment:
+#### Activate your new environment:
 
 # source /path/to/new/virtual/environment/bin/Activate
 
-Install requirements:
+#### Install requirements:
 
 # pip install -r requirements.txt
 
 Then change variables inside both of the scripts:
 
----------python_parser.py------------------------
+#### ---------python_parser.py------------------------
 
-## downloadPath  - and make sure path exists
-## myNumer  - your case number you given by Deutsch embassy officer
+**downloadPath**  - and make sure path exists
+**myNumer**  - your case number you given by Deutsch embassy officer
 
----------telebot.py------------------------------
+#### ---------telebot.py------------------------------
 
-## bot_token  - your token you have from FatherBot
-## bot_chatID - your own chat_id from response in URL  https://api.telegram.org/botYOUR_TOKEN_HERE/getUpdates
+**bot_token**  - your token you have from FatherBot
+**bot_chatID** - your own chat_id from response in URL  https://api.telegram.org/botYOUR_TOKEN_HERE/getUpdates
