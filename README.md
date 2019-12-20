@@ -6,6 +6,8 @@ requests, os, datetime, Pdfminer.six and BeautifulSoup4
 _____________________________________________________________________
 18.12.2019
 Add Telegram Bot functional for reporting about Sucess or bad requist
+Please, do not forget to change your ID of documents case on kiew.diplo.de
+and telegram Bot chat ID and token. I put Example thats will not work for you!
 _____________________________________________________________________
 Still working with.
 
