@@ -20,7 +20,7 @@ from pdfminer.pdfpage import PDFPage
 from telebot import telegram_bot_sendtext
 #----------------------------------------------------------------------------------------------
 #define Variables and functions
-downloadPath = "c:/Data/python/parser/downloads/"
+downloadPath = "./downloads/"
 
 # Url of the page where pdflink posted
 app_url = 'https://kiew.diplo.de/ua-uk/service/05-VisaEinreise/teaser-abholbereite-visa/1241142'
