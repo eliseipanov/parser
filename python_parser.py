@@ -78,10 +78,10 @@ def check_my_id():
         os.remove(savePath)
         print("Файл PDF видалено!")
 
-check_my_id()
+#check_my_id()
 # Lounching check on Schedule
-#schedule.every().day.at("16:07").do(check_my_id)
+schedule.every().day.at("16:07").do(check_my_id)
 
-#while True:
-#    schedule.run_pending()
-#    time.sleep(1)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
